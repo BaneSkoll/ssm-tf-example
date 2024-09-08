@@ -122,6 +122,25 @@ resource "aws_security_group_rule" "allow_https_from_instance" {
     source_security_group_id = aws_security_group.ec2_instance_sg.id
 }
 
+resource "aws_security_group_rule" "allow_all_outbound_ec2" {
+  type                   = "egress"
+  from_port              = 0
+  to_port                = 0
+  protocol               = "-1"
+  security_group_id      = aws_security_group.ec2_instance_sg.id
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+resource "aws_security_group_rule" "allow_all_outbound_vpce" {
+  type                   = "egress"
+  from_port              = 0
+  to_port                = 0
+  protocol               = "-1"
+  security_group_id      = aws_security_group.vpce_sg.id
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+
 #EC2 Instance
 resource "aws_instance" "ssm_example_instance" {
     ami = var.ami
