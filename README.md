@@ -72,8 +72,8 @@ When prompted, type `yes` to confirm the destruction of the resources.
 
 ## Troubleshooting
 
-- **SSM Connection Issues**: If you cannot connect to your instance via SSM, check that the IAM role attached to the instance has the correct SSM permissions and that the VPC endpoint for SSM is configured properly. [Troubleshooting] (https://docs.aws.amazon.com/systems-manager/latest/userguide/troubleshooting-managed-nodes-using-ssm-cli.html)
-- **Terraform Errors**: Ensure you have the latest version of Terraform and that your AWS credentials are correctly configured.
+- **SSM Connection Issues**: If you cannot connect to your instance via SSM, check that the IAM role attached to the instance has the correct SSM permissions and that the VPC endpoint for SSM is configured properly. Also, ensure that your instance is running the latest version of the SSM Agent. For more detailed troubleshooting steps, refer to the [AWS Systems Manager Troubleshooting Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/troubleshooting-managed-nodes-using-ssm-cli.html).
+- **Terraform Errors**: Ensure you have the latest version of Terraform and that your AWS credentials are correctly configured. If you encounter specific error messages, refer to the [Terraform Error Message Index](https://www.terraform.io/docs/cli/error-index.html) for potential solutions.
 
 ## Support
 
